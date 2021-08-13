@@ -1,18 +1,16 @@
-import { Fare } from "../invoice/types";
-
-export enum STANDARD_FARE {
-    BOOKING_CHARGES = 5,
-    PER_KM_FARE = 10,
-    PER_MIN_FARE = 1,
-}
-
-export enum PREMIUM_FARE {
-    BOOKING_CHARGES = 5,
-    PER_KM_FARE = 15,
-    PER_MIN_FARE = 2,
-}
-
-export const FARE: {[key: string]: Fare } = {
-    STANDARD_FARE: STANDARD_FARE,
-    PREMIUM_FARE: PREMIUM_FARE
-}
+export const CONVERSION_FACTOR_TO_MM: {[key: string]: number } = {
+    METER: 1000,
+    CENTIMETER: 10,
+    MILLIMETER: 1
+ }
+ 
+ export const CONVERSION_FACTOR_TO_GM: {[key: string]: number } = {
+    KILOGRAM: 1000,
+    POUND: 454,
+    GRAM: 10,
+ }
+ 
+ export const CONVERSION_FACTOR: {[key: string]: {[key: string]: number }} = {
+    LENGTH: CONVERSION_FACTOR_TO_MM,
+    WEIGHT: CONVERSION_FACTOR_TO_MM
+ }
